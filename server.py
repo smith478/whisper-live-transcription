@@ -8,15 +8,15 @@ from faster_whisper import WhisperModel
 
 app = FastAPI()
 
-MODEL_TYPE = "large-v2"
-RUN_TYPE = "gpu"  # "cpu" or "gpu"
+MODEL_TYPE = "large-v3"
+RUN_TYPE = "cpu"  # "cpu" or "gpu"
 
 # For CPU usage (https://github.com/SYSTRAN/faster-whisper/issues/100#issuecomment-1492141352)
 NUM_WORKERS = 10
 CPU_THREADS = 4
 
 # For GPU usage
-GPU_DEVICE_INDICES = [0, 1, 2, 3]
+GPU_DEVICE_INDICES = [0]
 
 VAD_FILTER = True
 
