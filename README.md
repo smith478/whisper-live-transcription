@@ -43,6 +43,22 @@ SHARE=1 python ui_client.py
 SSL_CERT_PATH=<PATH> SSL_KEY_PATH=<PATH> python ui_client.py
 ```
 
+Note 1: a self-signed certificate file for testing can be generated using OpenSSL with the following command:
+
+```shell
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
+```
+
+This command will generate a new 4096-bit RSA key (key.pem) and a self-signed certificate (cert.pem) that's valid for 365 days. You will be prompted to enter a passphrase for the private key. You will also be prompted to input other information. You can leave the rest of the fields blank by pressing Enter.
+
+In this case the command would be:
+```shell
+SSL_CERT_PATH=./cert.pem SSL_KEY_PATH=./key.pem python ui_client.py
+```
+
+Note 2: You need to click the `Record` button to prompt the browser to request access to the microphone.
+
+
 ## In the command line
 
 ```shell
